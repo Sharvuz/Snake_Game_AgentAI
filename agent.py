@@ -18,6 +18,7 @@ class Agent:
         self.gamma = 0.9 # discount rate
         self.memory = deque(maxlen=MAX_MEMORY) # popleft()
         self.model = Linear_QNet(11, 256, 3)
+        self.model.load() # load model da train
         self.trainer = QTrainer(self.model, lr=LR, gamma=self.gamma)
 
 
